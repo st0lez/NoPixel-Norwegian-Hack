@@ -1,30 +1,41 @@
-# Norwegian NoPixel Bank Hack Minigame
-This is a Norwegian edit of the NoPixel Hack Minigame
+# Hack minigame FiveM build
+Because of our great contributors there is now a FiveM version.
 
-[![](thumbnail.jpg)](https://jesper-hustad.github.io/NoPixel-minigame/index)
+## ⚠ In Beta ⚠  
+This version has been released in beta, but still expect some bugs!
+If you find any, please report it as an issue.
+Do you have knowledge with FiveM? Improve the code and your changes will happily be added!  
 
-## Is something wrong?
-If there is some part that is missing or something that isn't working right make an issue here on GitHub it will be looked at.
 
-## Supported browsers
-Tested in Chrome, Safari, and Firefox.
 
-## Added features
-- Customize time to solve puzzle with a slider.
-- Customize puzzle squares
-- Longer ticking metronome for longer puzzles.
-- Hint text to explain what in your answer was wrong.
-- Explenation page showing how to solve the puzzles.
-- Shortened loading time.
-- Try again button
+## Getting started
+1. Download the folder `hacking` trough git or [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/Jesper-Hustad/NoPixel-minigame/tree/main/fivem-script/hacking)  
+2. Drop it into your FiveM server in `server\resources\`
+3. Implement the hack in your client-side lua file using the `open:minigame` trigger.
 
-## FiveM version  
-You can use this on your FiveM server!  
-Check out the README in the fivem-script folder [here](/fivem-script/README.md).
+Note: If you want to change the resource name, remember to update the post events in script.js to match the resource name.
+## Example implementation
+In this example implementation the outcome is written out in the chat.
+```lua
+exports["hacking"]:hacking(
+function() -- success
+    TriggerEvent('chat:addMessage', {
+        color = { 255, 0, 0},
+        multiline = true,
+        args = {"Me", "Hack: passed"}
+    })
+end,
+function() -- failure
+    TriggerEvent('chat:addMessage', {
+        color = { 255, 0, 0},
+        multiline = true,
+        args = {"Me", "Hack: failed"}
+    })
+end)
+```
 
-## Before creating a PR
-Currently don't want to add many more features, so just creature comforts and cutting down on the code size.
+## Languages
+By going in the `language.js` file located in `fivem-script/hacking/html/src/language.js` you can change the variable `SELECTED_LANGUAGE` to any of the supported languages. Currently the supported languages are `['EN', 'ES', 'IT', 'FR']`. Only the colors are translated. Hopefully we can add more languages and expand the feature, feel free to send a pull request for this feature!
 
-Credits to https://jesper-hustad.github.io/NoPixel-minigame/index for making the English Version.
-
-Permissions Granted by Jesper Hustad for editing the files.
+## FiveM documentation
+Read about scripts in FiveM from the [FiveM Docs](https://docs.fivem.net/docs/scripting-manual/introduction/introduction-to-resources/).
