@@ -1,8 +1,5 @@
-# NoPixel Bank Hack Minigame
-An attempt to recreate as closely as possible the bank hack minigame on the whitelisted GTA server NoPixel.  
-Feel free to 🌟**star**🌟 the project if you like it.  
-Click the thumbnail bellow to try it out!  
-
+# Norwegian NoPixel Bank Hack Minigame
+This is a Norwegian edit of the NoPixel Hack Minigame
 
 [![](thumbnail.jpg)](https://jesper-hustad.github.io/NoPixel-minigame/index)
 
@@ -27,3 +24,7 @@ Check out the README in the fivem-script folder [here](/fivem-script/README.md).
 
 ## Before creating a PR
 Currently don't want to add many more features, so just creature comforts and cutting down on the code size.
+
+Credits to https://jesper-hustad.github.io/NoPixel-minigame/index for making the English Version.
+
+Permissions Granted by Jesper Hustad for editing the files.
